@@ -1,9 +1,13 @@
 
+import { connection } from "next/server";
 import { redirect } from "next/navigation";
 import { createClient } from "@/lib/supabase/server";
 import { LogoutButton } from "@/components/auth/logout-button";
 
 export default async function DashboardPage() {
+  // Request-time execution enable karega
+  await connection();
+
   const supabase = await createClient();
 
   const { data, error } = await supabase.auth.getClaims();
