@@ -4,6 +4,7 @@
 import { useState } from "react";
 import { Sidebar } from "./sidebar";
 import { Topbar } from "./topbar";
+import { TradingChart } from "./trading-chart";
 
 interface DashboardShellProps {
   email: string;
@@ -109,6 +110,9 @@ export function DashboardShell({ email }: DashboardShellProps) {
                 </div>
               </section>
             </div>
+            <div className="mt-6">
+  <TradingChart />
+</div>
 
             <section className="mt-6 rounded-2xl border border-zinc-800 bg-[#111114] p-6">
               <h2 className="font-semibold">Recent Trading Activity</h2>
